@@ -1,0 +1,31 @@
+RNN_Poem_Generation_7-1_CB
+load vocabulary done!
+load word embedding done!
+-alpha 0.006250
+-alphaDiv 2.000000
+-beta  1e-07
+-hidden 200      -- hidden layer size
+-class  82      -- class size
+-iter   1000      -- max iteration
+-fixFirst false   -- true means fix the first layer of the sentence model
+-randInit false   -- true means randomly initialize sentence model word embedding; false means using word2vec to initialize the layer
+-trainF    ../MISC/quatrain.train.uniq.rare
+-validF    ../MISC/quatrain.valid
+-testF     ../MISC/quatrain.test
+-embedF    ../MISC/poem.vectors.rare1.200.bin
+-saveModel 2  -- 0 do not save model; 1 save every 10000 poems; 2 save at the end
+-modelF    ../MISC/200
+-randSeed  1   -- random seed for all the random initialization
+-minImp  1.000100   -- minmum improvment for convergence, default 1.0001
+-stableAC 0.100000  -- everytime when flushing the network, activation in last time hidden layer is set to 'stableAC', default 0.1
+-flushOption 2  -- 1, flush the network every sentence; 2, flush the network every poem; 3, never flush (only flush at the beginning of training)
+-consynMin -10.000000  -- minimum value for convolutional matrix
+-consynMax 10.000000  -- maximum value for convolutional matrix
+-consynOffset 0.000000 -- offset of the value for convolutional matrix
+-direct false -- true means the direct error from output layer to condition layer will be used
+-conbptt false -- true means use BPTT training for the recurrent context model (during learning the sentence model)
+-vocabClassF ../MISC/vocab.class.82.txt
+-perSentUpdate false
+-historyStableAC 0.010000 -- stableAC in recurrent context model
+-adaGrad false -- true means using AdaGrad training algorithm; false means using SDG
+Iter:   0	Alpha: 0.006250	   TRAIN entropy: 10.3056 (1265.5668)   Progress: 0.13%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.8137 (899.9249)   Progress: 0.27%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.6224 (788.1923)   Progress: 0.40%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.4898 (718.9710)   Progress: 0.53%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.3574 (655.9340)   Progress: 0.67%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.2954 (628.3207)   Progress: 0.80%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.2156 (594.5114)   Progress: 0.94%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.1562 (570.5500)   Progress: 1.07%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.1322 (561.1380)   Progress: 1.20%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.1068 (551.3531)   Progress: 1.34%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.0817 (541.8368)   Progress: 1.47%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.0499 (530.0040)   Progress: 1.60%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.0335 (524.0315)   Progress: 1.74%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 9.0064 (514.2784)   Progress: 1.87%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 8.9647 (499.6238)   Progress: 2.01%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 8.9517 (495.1517)   Progress: 2.14%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 8.9383 (490.5594)   Progress: 2.27%Iter:   0	Alpha: 0.006250	   TRAIN entropy: 8.9257 (486.3035)   Progress: 2.41%
