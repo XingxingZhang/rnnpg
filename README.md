@@ -34,10 +34,8 @@ Download the complete dataset from [here](http://homepages.inf.ed.ac.uk/mlap/Dat
 # Installation
 1. Install [KenLM](https://kheafield.com/code/kenlm/)
 2. Go to *rnnpg* folder and modify the Makefile (see below). Direct `INCLUDES` and `LDFLAGS` to your KenLM library. Also modify the Makefiles in *rnnpg-decoder* and *rnnpg-generator*.
-3. Make everything by
-```./INSTALL.sh``` 
+3. Make everything by ./INSTALL.sh
 ```
-# change the target if you need
 OUT_EXEC = rnnpg 
 OBJS = $(patsubst %.cpp, %.o, $(wildcard *.cpp))
 
