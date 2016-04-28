@@ -32,12 +32,13 @@ Download the complete dataset from [here](http://homepages.inf.ed.ac.uk/mlap/Dat
 * Python (2.7)
 
 # Installation
-1. Install [KenLM](https://kheafield.com/code/kenlm/). Also remember to add kenlm to your LD_LIBRARY_PATH
+1) Install [KenLM](https://kheafield.com/code/kenlm/). Also remember to add kenlm to your LD_LIBRARY_PATH
 ```
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/afs/inf.ed.ac.uk/user/s12/s1270921/usr/kenlm/lib
 ```
-2. Go to *rnnpg* folder and modify the Makefile (see below). Direct `INCLUDES` and `LDFLAGS` to your KenLM library. Also modify the Makefiles in *rnnpg-decoder* and *rnnpg-generator*.
-3. Make everything by ./INSTALL.sh
+2) Go to *rnnpg* folder and modify the Makefile (see below). Direct `INCLUDES` and `LDFLAGS` to your KenLM library. Also modify the Makefiles in *rnnpg-decoder* and *rnnpg-generator*.
+
+3) Make everything by ./INSTALL.sh
 ```
 OUT_EXEC = rnnpg 
 OBJS = $(patsubst %.cpp, %.o, $(wildcard *.cpp))
