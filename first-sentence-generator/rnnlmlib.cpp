@@ -548,8 +548,6 @@ void CRnnLM::restoreNet()    //will read whole network structure
 {
     FILE *fi;
     int a, b, ver;
-    int ch;
-    real f;
     float fl;
     char str[MAX_STRING];
 
@@ -845,7 +843,6 @@ void CRnnLM::computeNet(int last_word, int word)
     int a, b, c;
     real val;
     double sum;   //sum is used for normalization: it's better to have larger precision as many numbers are summed together here
-    real val1, val2, val3, val4;
 
     if (last_word!=-1) neu0[last_word].ac=1;
 
@@ -952,9 +949,8 @@ void CRnnLM::computeNet(int last_word, int word)
 void CRnnLM::learnNet(int last_word, int word)
 {
     int a, b, c, t, step;
-    real val1, val2, val3, val4, beta2;
     
-    beta2=beta*alpha;
+    real beta2=beta*alpha;
 
     if (word==-1) return;
 
@@ -1209,9 +1205,9 @@ void CRnnLM::copyHiddenLayerToInput()
 
 void CRnnLM::trainNet()
 {
-    int a, b, i, word, last_word, wordcn;
+    int a, b, word, last_word, wordcn;
     char str[MAX_STRING];
-    FILE *fi, *fo, *flog;
+    FILE *fi, *flog;
 
     printf("Starting training using file %s\n", train_file);
     starting_alpha=alpha;
@@ -1375,11 +1371,9 @@ void CRnnLM::trainNet()
 
 void CRnnLM::testNet()
 {
-    int a, b, i, word, last_word, wordcn;
+    int a, b, word, last_word, wordcn;
     FILE *fi, *flog, *lmprob;
-    char str[MAX_STRING];
-    real prob_other, log_other, log_combine, f;
-    int overwrite;
+    real prob_other, log_other, log_combine;
     
     restoreNet();
     
@@ -1497,12 +1491,10 @@ void CRnnLM::testNet()
 
 void CRnnLM::testNbest()
 {
-    int a, word, last_word, wordcn;
+    int word, last_word, wordcn;
     FILE *fi, *flog, *lmprob;
-    char str[MAX_STRING];
     float prob_other; //has to be float so that %f works in fscanf
     real log_other, log_combine, senp;
-    int overwrite;
     //int nbest=-1;
     int nbest_cn=0;
     char ut1[MAX_STRING], ut2[MAX_STRING];

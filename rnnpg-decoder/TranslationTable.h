@@ -152,8 +152,6 @@ public:
 			{
 				TransList *transList = transTbls[i][j];
 				int firstIndex = transList->word;
-				char *first = NULL;
-				first = StringBuffer::getRealAddr(firstIndex);
 				char *second = NULL;
 				for(k = 0; k < (int)transList->tlist.size(); k ++)
 				{

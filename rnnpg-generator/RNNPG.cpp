@@ -2999,12 +2999,10 @@ void RNNPG::getContextHiddenNeu(vector<string> &prevSents, neuron **contextHidde
 			for(wdPos = 0; wdPos < (int)words.size(); wdPos ++)
 			{
 				curWord = vocab.getVocabID(words[wdPos].c_str());
-				bool isRare = false;
 				if(curWord == -1)
 				{
 					// when the word cannot be found, we use <R> instead
 					curWord = vocab.getVocabID("<R>");
-					isRare = true;
 				}
 				assert(curWord != -1);		// this is impossible, or there is a bug!
 				inNeu[lastWord].ac = 1;

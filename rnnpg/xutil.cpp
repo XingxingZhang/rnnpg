@@ -30,7 +30,7 @@ void* xmalloc (size_t size, const char *msg)
 	void* p = malloc(size);
 	if(p == NULL)
 	{
-		fprintf(stderr, "alloc memory %d failed (%s)\n", size, msg);
+		fprintf(stderr, "alloc memory %lu failed (%s)\n", size, msg);
 		exit(1);
 	}
 	return p;
