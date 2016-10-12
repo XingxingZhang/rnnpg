@@ -1,3 +1,9 @@
+
+This is the original version! commit hashcode 
+```
+ec51151f71a65f873423f800abab89c4ae7ef9dc
+```
+
 # Chinese Poetry Generation with Recurrent Neural Networks
 This project includes the code/model for the paper 
 
