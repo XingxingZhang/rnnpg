@@ -57,7 +57,7 @@ class Vocab
 {
 public:
 	Vocab(int maxVSize = 6000, int vIncSize = 1000, int hSize = HASH_SIZE)
-		: vocabSize(0), maxVocabSize(maxVSize), vocabIncrement(vIncSize), hashSize(hSize)
+		: hashSize(hSize), vocabSize(0), maxVocabSize(maxVSize), vocabIncrement(vIncSize)
 	{
 		hash = (int*)malloc(sizeof(int)*hashSize);
 		memset(hash, 0xff, sizeof(int)*hashSize);	// all entries in hash table are set to -1

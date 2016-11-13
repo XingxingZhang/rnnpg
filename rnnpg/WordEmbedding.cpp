@@ -121,11 +121,10 @@ void WordEmbedding::getNearestWords(const char *wd)
 	ind = wdInds[ind].index;
 	Nd *nList;
 	nList = new Nd[wordSize];
-	int i, j, k;
+	int i, j;
 	for(i = 0; i < wordSize; i ++)
 	{
 		strcpy(nList[i].word, &vocab[i*WE_WDLEN]);
-		double sim = 0;
 		double sum1 = 0, sum2 = 0, dot = 0;
 		for(j = 0; j < embeddingSize; j ++)
 		{
